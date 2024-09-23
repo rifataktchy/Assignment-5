@@ -1,3 +1,4 @@
+// for navbar button
 document.getElementById('main-donation-button').addEventListener("click", function(){
     document.getElementById('main-history-button').classList.remove('active-color');
     

@@ -1,4 +1,4 @@
-// blog button
+// for blog button
 document.getElementById('blog-button').addEventListener("click", function(){
     window.location.href = '/Assignment-5/blog.html';
 
@@ -11,6 +11,8 @@ document.getElementById("donate-noakhali-button").addEventListener("click", func
 const donateAmountNumber = getInputValueById('donate-amount');
 const myBalance = getTextValueById('my-balance');
 const availableDonationNumber = getTextValueById('available-donation');
+
+document.getElementById('donate-amount').value="";
 
 if(isNaN(donateAmountNumber) || donateAmountNumber<=0){
 alert('failed to add donation amount');
@@ -50,19 +52,26 @@ document.getElementById("donate-feni-button").addEventListener("click", function
    event.preventDefault();
   
   const donateAmountNumber = getInputValueById('donate-feni-amount');
+  const myBalance = getTextValueById('my-balance');
+  const availableDonationNumber = getTextValueById('available-donation-feni');
+
+  document.getElementById('donate-feni-amount').value="";
   
   if(isNaN(donateAmountNumber) || donateAmountNumber<=0){
     alert('failed to add donation amount');
     return;
     }
-    
-  const availableDonationNumber = getTextValueById('available-donation-feni');
+
+    if(myBalance<donateAmountNumber){
+      alert('failed to add donation amount because of low balance');
+      return;
+   };
 
   const newDonationBalance = availableDonationNumber+ donateAmountNumber;
  
   document.getElementById('available-donation-feni').innerText = newDonationBalance;
 
-  const myBalance = getTextValueById('my-balance');
+  
   const updatedMyBalance = myBalance - donateAmountNumber;
   document.getElementById('my-balance').innerText= updatedMyBalance;
   const modal = document.getElementById('my_modal_1');
@@ -86,18 +95,26 @@ document.getElementById("donate-quota-button").addEventListener("click", functio
     event.preventDefault();
   
   const donateAmountNumber = getInputValueById('donate-quota-amount');
+  const myBalance = getTextValueById('my-balance');
+  const availableDonationNumber = getTextValueById('available-donation-quota');
+
+  document.getElementById('donate-quota-amount').value="";
+
+
   if(isNaN(donateAmountNumber) || donateAmountNumber<=0){
     alert('failed to add donation amount');
     return;
     }
 
-  const availableDonationNumber = getTextValueById('available-donation-quota');
+  
+  if(myBalance<donateAmountNumber){
+      alert('failed to add donation amount because of low balance');
+      return;
+   };
 
   const newDonationBalance = availableDonationNumber+ donateAmountNumber;
- 
   document.getElementById('available-donation-quota').innerText = newDonationBalance;
 
-  const myBalance = getTextValueById('my-balance');
   const updatedMyBalance = myBalance - donateAmountNumber;
   document.getElementById('my-balance').innerText= updatedMyBalance;
   
