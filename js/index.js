@@ -1,6 +1,6 @@
 // blog button
 document.getElementById('blog-button').addEventListener("click", function(){
-    window.location.href = '/blog.html';
+    window.location.href = '/Assignment-5/blog.html';
 });
 
 // for section-1
