@@ -1,24 +1,31 @@
 // blog button
 document.getElementById('blog-button').addEventListener("click", function(){
     window.location.href = '/Assignment-5/blog.html';
+
+    //    window.location.href = '/blog.html';
 });
 
 // for section-1
 document.getElementById("donate-noakhali-button").addEventListener("click", function(event){
   event.preventDefault();
 const donateAmountNumber = getInputValueById('donate-amount');
+const myBalance = getTextValueById('my-balance');
+const availableDonationNumber = getTextValueById('available-donation');
 
 if(isNaN(donateAmountNumber) || donateAmountNumber<=0){
 alert('failed to add donation amount');
 return;
 }
 
-const availableDonationNumber = getTextValueById('available-donation');
+
+ if(myBalance<donateAmountNumber){
+    alert('failed to add donation amount because of low balance');
+    return;
+ };
 
 const newDonationBalance = availableDonationNumber+ donateAmountNumber;
 document.getElementById('available-donation').innerText = newDonationBalance;
 
-const myBalance = getTextValueById('my-balance');
 const updatedMyBalance = myBalance - donateAmountNumber;
 document.getElementById('my-balance').innerText= updatedMyBalance;
 
