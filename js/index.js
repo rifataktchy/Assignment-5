@@ -1,15 +1,13 @@
 // for section-1
 document.getElementById("donate-noakhali-button").addEventListener("click", function(event){
   event.preventDefault();
-//   const donateAmount = document.getElementById("donate-amount").value;
-//   const donateAmountNumber = parseFloat(donateAmount);
 const donateAmountNumber = getInputValueById('donate-amount');
+
 if(isNaN(donateAmountNumber) || donateAmountNumber<=0){
 alert('failed to add donation amount');
 return;
 }
-//  const availableDonation = document.getElementById('available-donation').innerText;
-// const availableDonationNumber = parseFloat(availableDonation);
+
 const availableDonationNumber = getTextValueById('available-donation');
 
 const newDonationBalance = availableDonationNumber+ donateAmountNumber;
@@ -18,13 +16,23 @@ document.getElementById('available-donation').innerText = newDonationBalance;
 const myBalance = getTextValueById('my-balance');
 const updatedMyBalance = myBalance - donateAmountNumber;
 document.getElementById('my-balance').innerText= updatedMyBalance;
-const modal = document.getElementById('my_modal_1');
-  modal.showModal();
+
+const modal = document.getElementById('my_modal_1'); 
+modal.showModal();
+
+const noakhaliBanner = document.getElementById('noakhali-banner').innerText;
+
+const div = document.createElement('div');
+div.classList.add('border');
+div.innerHTML= `<p class="p-2">${donateAmountNumber} Taka is ${noakhaliBanner}</p>`
+document.getElementById('history-page').appendChild(div);
+
 });
+
 
 // for section-2
 document.getElementById("donate-feni-button").addEventListener("click", function(event){
-    event.preventDefault();
+   event.preventDefault();
   
   const donateAmountNumber = getInputValueById('donate-feni-amount');
   
@@ -32,18 +40,28 @@ document.getElementById("donate-feni-button").addEventListener("click", function
     alert('failed to add donation amount');
     return;
     }
- const availableDonationNumber = getTextValueById('available-donation-feni');
+    
+  const availableDonationNumber = getTextValueById('available-donation-feni');
 
- const newDonationBalance = availableDonationNumber+ donateAmountNumber;
+  const newDonationBalance = availableDonationNumber+ donateAmountNumber;
  
- document.getElementById('available-donation-feni').innerText = newDonationBalance;
+  document.getElementById('available-donation-feni').innerText = newDonationBalance;
 
-const myBalance = getTextValueById('my-balance');
-const updatedMyBalance = myBalance - donateAmountNumber;
-document.getElementById('my-balance').innerText= updatedMyBalance;
-const modal = document.getElementById('my_modal_1');
+  const myBalance = getTextValueById('my-balance');
+  const updatedMyBalance = myBalance - donateAmountNumber;
+  document.getElementById('my-balance').innerText= updatedMyBalance;
+  const modal = document.getElementById('my_modal_1');
   modal.showModal();
+
+  const feniBanner = document.getElementById('feni-banner').innerText;
+
+  const div = document.createElement('div');
+  div.classList.add('border');
+  div.innerHTML= `<p class="p-2">${donateAmountNumber} Taka is ${feniBanner}</p>`
+  document.getElementById('history-page').appendChild(div);
+
   });
+
 
 // for section-3
 document.getElementById("donate-quota-button").addEventListener("click", function(event){
@@ -55,16 +73,25 @@ document.getElementById("donate-quota-button").addEventListener("click", functio
     return;
     }
 
- const availableDonationNumber = getTextValueById('available-donation-quota');
+  const availableDonationNumber = getTextValueById('available-donation-quota');
 
- const newDonationBalance = availableDonationNumber+ donateAmountNumber;
+  const newDonationBalance = availableDonationNumber+ donateAmountNumber;
  
- document.getElementById('available-donation-quota').innerText = newDonationBalance;
+  document.getElementById('available-donation-quota').innerText = newDonationBalance;
 
-const myBalance = getTextValueById('my-balance');
-const updatedMyBalance = myBalance - donateAmountNumber;
-document.getElementById('my-balance').innerText= updatedMyBalance;
-const modal = document.getElementById('my_modal_1');
+  const myBalance = getTextValueById('my-balance');
+  const updatedMyBalance = myBalance - donateAmountNumber;
+  document.getElementById('my-balance').innerText= updatedMyBalance;
+  
+  const modal = document.getElementById('my_modal_1');
   modal.showModal();
+
+  const quotaBanner = document.getElementById('quota-banner').innerText;
+
+  const div = document.createElement('div');
+  div.classList.add('border');
+  div.innerHTML= `<p class="p-2">${donateAmountNumber} Taka is ${quotaBanner}</p>`
+  document.getElementById('history-page').appendChild(div);
+
   });
   

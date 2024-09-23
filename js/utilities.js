@@ -1,4 +1,5 @@
-// common shared function
+// common shared functions
+
 function getInputValueById(id){
     const donateAmount = document.getElementById(id).value;
     const donateAmountNumber = parseFloat(donateAmount);
@@ -16,5 +17,4 @@ function showSectionById(id){
     document.getElementById('history-page').classList.add('hidden');
 
     document.getElementById(id).classList.remove('hidden');
-console.log("hello")
 }
