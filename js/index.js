@@ -1,3 +1,5 @@
+// blog button
+document.getElementById('blog-button');
 // for section-1
 document.getElementById("donate-noakhali-button").addEventListener("click", function(event){
   event.preventDefault();
