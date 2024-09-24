@@ -1,8 +1,6 @@
 // for blog button
 document.getElementById('blog-button').addEventListener("click", function(){
     window.location.href = '/Assignment-5/blog.html';
-
-    //    window.location.href = '/blog.html';
 });
 
 // for section-1
@@ -26,10 +24,10 @@ return;
  };
 
 const newDonationBalance = availableDonationNumber+ donateAmountNumber;
-document.getElementById('available-donation').innerText = newDonationBalance;
+document.getElementById('available-donation').innerText = newDonationBalance.toFixed(2);
 
 const updatedMyBalance = myBalance - donateAmountNumber;
-document.getElementById('my-balance').innerText= updatedMyBalance;
+document.getElementById('my-balance').innerText= updatedMyBalance.toFixed(2);
 
 const modal = document.getElementById('my_modal_1'); 
 modal.showModal();
@@ -69,11 +67,11 @@ document.getElementById("donate-feni-button").addEventListener("click", function
 
   const newDonationBalance = availableDonationNumber+ donateAmountNumber;
  
-  document.getElementById('available-donation-feni').innerText = newDonationBalance;
+  document.getElementById('available-donation-feni').innerText = newDonationBalance.toFixed(2);
 
   
   const updatedMyBalance = myBalance - donateAmountNumber;
-  document.getElementById('my-balance').innerText= updatedMyBalance;
+  document.getElementById('my-balance').innerText= updatedMyBalance.toFixed(2);
   const modal = document.getElementById('my_modal_1');
   modal.showModal();
 
@@ -113,10 +111,10 @@ document.getElementById("donate-quota-button").addEventListener("click", functio
    };
 
   const newDonationBalance = availableDonationNumber+ donateAmountNumber;
-  document.getElementById('available-donation-quota').innerText = newDonationBalance;
+  document.getElementById('available-donation-quota').innerText = newDonationBalance.toFixed(2);
 
   const updatedMyBalance = myBalance - donateAmountNumber;
-  document.getElementById('my-balance').innerText= updatedMyBalance;
+  document.getElementById('my-balance').innerText= updatedMyBalance.toFixed(2);
   
   const modal = document.getElementById('my_modal_1');
   modal.showModal();
